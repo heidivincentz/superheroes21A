@@ -407,9 +407,26 @@ const superheroes = [
   },
 ];
 
-alert(
-  "1. Checking if JS file is linked up correctly. \n2. Always open the inspector/console when woorking with the JS \n3. Write your code in the end of the js-file \n4. Don't use alert boxes for UI... \n5. Delete this message or comment it out"
-);
+// alert(
+//   "1. Checking if JS file is linked up correctly. \n2. Always open the inspector/console when woorking with the JS \n3. Write your code in the end of the js-file \n4. Don't use alert boxes for UI... \n5. Delete this message or comment it out"
+// );
 console.table(superheroes);
 
 /* write your code here */
+
+items.forEach(showHero);
+
+function showProduct(hero) {
+  const template = document.querySelector("template").content;
+  const clone = template.cloneNode(true);
+  clone.querySelector(".birthname").textContent = item.birthname;
+  clone.querySelector(".gender").textContent = item.gender;
+  clone.querySelector(".power").textContent = item.power;
+  clone.querySelector(".cape").textContent = item.cape;
+  clone.querySelector(".species").textContent = item.species;
+  clone.querySelector(".alias").textContent = item.alias;
+  clone.querySelector(".dob").textContent = item.dob;
+
+  const parent = document.querySelector("main");
+  parent.appendChild(clone);
+}
