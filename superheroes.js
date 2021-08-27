@@ -413,10 +413,12 @@ const superheroes = [
 console.table(superheroes);
 
 /* write your code here */
+fetch(superheroes).then((data) => showHero(data));
 
 items.forEach(showHero);
 
 function showProduct(hero) {
+  console.log(hero);
   const template = document.querySelector("template").content;
   const clone = template.cloneNode(true);
   clone.querySelector(".birthname").textContent = item.birthname;
