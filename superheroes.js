@@ -423,13 +423,18 @@ function showHero(hero) {
   const clone = template.cloneNode(true);
   clone.querySelector(".birthname").textContent = hero.birthname;
   clone.querySelector(".gender").textContent = hero.gender;
-  clone.querySelector(".power").textContent = hero.power;
-  clone.querySelector(".cape").textContent = hero.cape;
+  clone.querySelector(".power").textContent = hero.powers;
+  // clone.querySelector(".cape").textContent = hero.cape;
   clone.querySelector(".species").textContent = hero.species;
   clone.querySelector(".alias").textContent = hero.alias;
   clone.querySelector(".dob").textContent = hero.dob;
   clone.querySelector("img").src = hero.img;
   clone.querySelector("img").alt = hero.alias;
+  if (hero.cape) {
+    // nothing
+  } else {
+    clone.querySelector("p").remove();
+  }
 
   // Append
   document.querySelector("main").appendChild(clone);
