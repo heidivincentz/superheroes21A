@@ -415,20 +415,22 @@ console.table(superheroes);
 /* write your code here */
 fetch(superheroes).then((data) => showHero(data));
 
-items.forEach(showHero);
+superheroes.forEach(showHero);
 
-function showProduct(hero) {
-  console.log(hero);
+function showHero(hero) {
+  // console.log(hero);
   const template = document.querySelector("template").content;
   const clone = template.cloneNode(true);
-  clone.querySelector(".birthname").textContent = item.birthname;
-  clone.querySelector(".gender").textContent = item.gender;
-  clone.querySelector(".power").textContent = item.power;
-  clone.querySelector(".cape").textContent = item.cape;
-  clone.querySelector(".species").textContent = item.species;
-  clone.querySelector(".alias").textContent = item.alias;
-  clone.querySelector(".dob").textContent = item.dob;
+  clone.querySelector(".birthname").textContent = hero.birthname;
+  clone.querySelector(".gender").textContent = hero.gender;
+  clone.querySelector(".power").textContent = hero.power;
+  clone.querySelector(".cape").textContent = hero.cape;
+  clone.querySelector(".species").textContent = hero.species;
+  clone.querySelector(".alias").textContent = hero.alias;
+  clone.querySelector(".dob").textContent = hero.dob;
+  clone.querySelector("img").src = hero.img;
+  clone.querySelector("img").alt = hero.alias;
 
-  const parent = document.querySelector("main");
-  parent.appendChild(clone);
+  // Append
+  document.querySelector("main").appendChild(clone);
 }
